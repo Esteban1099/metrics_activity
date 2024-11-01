@@ -1,13 +1,10 @@
-name: Merging of feature Branch into Develop Branch
+name: Build
 on:
   push:
     branches:
-      - "feature**"
-
-permissions:
-  contents: write
-  pull-requests: write
-
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
     name: SonarCloud
