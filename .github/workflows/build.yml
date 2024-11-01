@@ -24,7 +24,7 @@ jobs:
 
       - name: Run unit tests
         run: |
-          ng test --no-watch --browsers=ChromeHeadless --code-coverage --source-map=false
+          ng test --no-watch --browsers=ChromeHeadless --code-coverage --source-map=false > test-output.txt 2>&1
           if grep -q "FAILED" test-output.txt; then
             echo "Tests failed, aborting workflow."
             exit 1
